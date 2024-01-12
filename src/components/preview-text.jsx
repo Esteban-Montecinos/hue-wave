@@ -47,7 +47,8 @@ export default function PreviewText() {
           className={cn(
             theme === "dark" && "bg-white text-neutral-800 hover:bg-neutral-200"
           )}
-          arial-label="change color theme"
+          arial-label="Cambiar Color del tema"
+          title="Cambiar Color del tema"
         >
           {theme === "dark" ? (
             <IconBulbFilled className="size-5" />
