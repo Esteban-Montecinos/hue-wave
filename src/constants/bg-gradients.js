@@ -1,160 +1,160 @@
 export const bgGradients = [
   {
     value: { bg: "linear-gradient(to top,", tw: "bg-gradient-to-t" },
-    label: "To Top",
+    label: "Hacia Arriba",
   },
   {
     value: { bg: "linear-gradient(to right top,", tw: "bg-gradient-to-tr" },
-    label: "To Top Right",
+    label: "Hacia Arriba Derecha",
   },
   {
     value: { bg: "linear-gradient(to right,", tw: "bg-gradient-to-r" },
-    label: "To Right",
+    label: "Hacia Derecha",
   },
   {
     value: { bg: "linear-gradient(to right bottom,", tw: "bg-gradient-to-br" },
-    label: "To Bottom Right",
+    label: "Hacia Abajo Derecha",
   },
   {
     value: { bg: "linear-gradient(to bottom,", tw: "bg-gradient-to-b" },
-    label: "To Bottom",
+    label: "Hacia Abajo",
   },
   {
     value: { bg: "linear-gradient(to left bottom,", tw: "bg-gradient-to-bl" },
-    label: "To Bottom Left",
+    label: "Hacia Abajo Izquierda",
   },
   {
     value: { bg: "linear-gradient(to left,", tw: "bg-gradient-to-l" },
-    label: "To Left",
+    label: "Hacia Izquierda",
   },
   {
     value: { bg: "linear-gradient(to left top,", tw: "bg-gradient-to-tl" },
-    label: "To Top Left",
+    label: "Hacia Arriba Izquierda",
   },
   {
     value: {
       bg: "conic-gradient(",
       tw: "bg-[conic-gradient(var(--tw-gradient-stops))]",
     },
-    label: "Conic Center",
+    label: "Cono Central",
   },
   {
     value: {
       bg: "conic-gradient(at center top,",
       tw: "bg-[conic-gradient(at_top,_var(--tw-gradient-stops))]",
     },
-    label: "Conic Top",
+    label: "Cono Arriba",
   },
   {
     value: {
       bg: "conic-gradient(at right top,",
       tw: "bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))]",
     },
-    label: "Conic Top Right",
+    label: "Cono Arriba Derecha",
   },
   {
     value: {
       bg: "conic-gradient(at right center,",
       tw: "bg-[conic-gradient(at_right,_var(--tw-gradient-stops))]",
     },
-    label: "Conic Right",
+    label: "Cono Derecha",
   },
   {
     value: {
       bg: "conic-gradient(at right bottom,",
       tw: "bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))]",
     },
-    label: "Conic Bottom Right",
+    label: "Cono Abajo Derecha",
   },
   {
     value: {
       bg: "conic-gradient(at center bottom,",
       tw: "bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))]",
     },
-    label: "Conic Bottom",
+    label: "Cono Abajo",
   },
   {
     value: {
       bg: "conic-gradient(at left bottom,",
       tw: "bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))]",
     },
-    label: "Conic Bottom Left",
+    label: "Cono Abajo Izquierda",
   },
   {
     value: {
       bg: "conic-gradient(at center left,",
       tw: "bg-[conic-gradient(at_left,_var(--tw-gradient-stops))]",
     },
-    label: "Conic Left",
+    label: "Cono Izquierda",
   },
   {
     value: {
       bg: "conic-gradient(at center left top,",
       tw: "bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))]",
     },
-    label: "Conic Top Left",
+    label: "Cono Arriba Izquierda",
   },
   {
     value: {
       bg: "radial-gradient(",
       tw: "bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))",
     },
-    label: "Radial Center",
+    label: "Radial Central",
   },
   {
     value: {
       bg: "radial-gradient(at center top,",
       tw: "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]",
     },
-    label: "Radial Top",
+    label: "Radial Arriba",
   },
   {
     value: {
       bg: "radial-gradient(at right top,",
       tw: "bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))]",
     },
-    label: "Radial Top Right",
+    label: "Radial Arriba Derecha",
   },
   {
     value: {
       bg: "radial-gradient(at center right,",
       tw: "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))]",
     },
-    label: "Radial Right",
+    label: "Radial Derecha",
   },
   {
     value: {
       bg: "radial-gradient(at right bottom,",
       tw: "bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))]",
     },
-    label: "Radial Bottom Right",
+    label: "Radial Abajo Derecha",
   },
   {
     value: {
       bg: "radial-gradient(at center bottom,",
       tw: "bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))]",
     },
-    label: "Radial Bottom",
+    label: "Radial Abajo",
   },
   {
     value: {
       bg: "radial-gradient(at bottom left,",
       tw: "bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))]",
     },
-    label: "Radial Bottom Left",
+    label: "Radial Abajo Izquierda",
   },
   {
     value: {
       bg: "radial-gradient(at center left,",
       tw: "bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))]",
     },
-    label: "Radial Left",
+    label: "Radial Izquierda",
   },
   {
     value: {
       bg: "radial-gradient(at left top,",
       tw: "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))]",
     },
-    label: "Radial Top Left",
+    label: "Radial Arriba Izquierda",
   },
 ];
