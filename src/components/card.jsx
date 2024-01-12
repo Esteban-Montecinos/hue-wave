@@ -11,11 +11,11 @@ export default function Card({title,gradientTw, gradientCSS,encode}) {
     <article className="relative">
         <Link href={`/${encode}`} >
             <span className='sr-only'>Gradiente generado con HUE WAVE</span>
-          <div className={cn("h-64 rounded-xl", gradientTw)}></div>
+          <div className={cn("size-64 rounded-xl", gradientTw)}></div>
         </Link>
-        <div className="mx-1.5 -mt-6 rounded-xl bg-neutral-900 p-6 text-white">
+        <div className="w-full p-6 mx-auto -mt-6 text-white max-w-56 rounded-xl bg-neutral-900">
           <p className="font-black tracking-wide uppercase">{title}</p>
-          <div className="flex items-center w-full gap-2 mt-4">
+          <div className="grid grid-cols-2 min-[320px]:grid-cols-4 items-center w-full gap-2 mt-4">
             <CopyTW gradient={gradientTw}/>
             <CopyCSS gradient={gradientCSS}/>
             <DownloadImage encode={encode}/>
