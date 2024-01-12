@@ -32,11 +32,12 @@ export default function DownloadImage({ encode }) {
   return (
     <Button
       className="px-2 py-1 bg-white text-neutral-800 hover:bg-neutral-200"
-      arial-label="Share Your Gradient"
+      arial-label="Descargar imagen"
+      title="Descargar imagen"
       onClick={() => {
         toast.promise(handleClick, {
-          loading: "Loading...",
-          success: "The image has been copied",
+          loading: "Cargando...",
+          success: "La imagen ha sido copiada.",
           error: "Error",
         });
       }}

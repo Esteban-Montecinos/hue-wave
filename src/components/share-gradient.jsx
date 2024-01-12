@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "./ui/button";
-import { IconFileTypeCss } from "./icons/file-type-css-svg";
 import { useStore } from "@/hooks/use-store";
 import { toast } from "sonner";
 import { IconShare } from "./icons/share-svg";
@@ -29,11 +28,12 @@ export default function ShareGradient({encode}) {
   return (
     <Button
       className="px-2 py-1 bg-white text-neutral-800 hover:bg-neutral-200"
-      arial-label="Share Your Gradient"
+      arial-label="Comparte tu gradiente"
+      title="Comparte tu gradiente"
       onClick={() => {
         toast.promise(handleClick, {
-          loading: "Loading...",
-          success: "Url have been copied",
+          loading: "Cargando...",
+          success: "La URL ha sido copiada",
           error: "Error",
         });
       }}

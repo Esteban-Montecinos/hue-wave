@@ -28,11 +28,12 @@ export default function CopyTW({gradient}) {
   return (
     <Button
       className="px-2 py-1 bg-white text-neutral-800 hover:bg-neutral-200"
-      arial-label="Copy Tailwind Class Names"
+      arial-label="Copiar clase de Tailwind"
+      title="Copiar clase de Tailwind"
       onClick={() => {
         toast.promise(handleClick, {
-          loading: "Loading...",
-          success: "Tailwind class names have been copied",
+          loading: "Cargando...",
+          success: "Las Clases de Tailwind han sido copiadas",
           error: "Error",
         });
       }}

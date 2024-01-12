@@ -28,11 +28,12 @@ export default function CopyCSS({gradient}) {
   return (
     <Button
       className="px-2 py-1 bg-white text-neutral-800 hover:bg-neutral-200"
-      arial-label="Copy CSS Code"
+      arial-label="Copiar código CSS"
+      title="Copiar código CSS"
       onClick={() => {
         toast.promise(handleClick, {
-          loading: "Loading...",
-          success: "CSS have been copied",
+          loading: "Cargando...",
+          success: "El CSS ha sido copiado",
           error: "Error",
         });
       }}
