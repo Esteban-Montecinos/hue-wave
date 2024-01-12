@@ -97,7 +97,7 @@ export const bgGradients = [
   {
     value: {
       bg: "radial-gradient(",
-      tw: "bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))",
+      tw: "bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
     },
     label: "Radial Central",
   },
