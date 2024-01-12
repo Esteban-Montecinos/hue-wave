@@ -1,7 +1,6 @@
 # HUE WAVE
 Crea, Copia y Comparte Gradientes para Tailwind CSS
 
-![huewave-home](https://github.com/Esteban-Montecinos/hue-wave/assets/81337401/37a7d61a-06aa-4600-9b2b-eb43cf697169)
-
+![huewave-pre](https://github.com/Esteban-Montecinos/hue-wave/assets/81337401/8c50d57f-9d8f-480f-a2d1-5efd7ced81af)
 
 creado con Next.js
