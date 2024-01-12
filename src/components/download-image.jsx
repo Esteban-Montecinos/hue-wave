@@ -5,6 +5,8 @@ import { useStore } from "@/hooks/use-store";
 import { toast } from "sonner";
 import { encodeURI } from "js-base64";
 import { IconPhotoDown } from "./icons/photo-down-svg";
+import { Skeleton } from "./ui/skeleton";
+import { useEffect, useState } from "react";
 
 export default function DownloadImage({ encode }) {
   const bg = useStore((state) => state.bg);
@@ -14,6 +16,17 @@ export default function DownloadImage({ encode }) {
   const frPercent = useStore((state) => state.frPercent);
   const viaPercent = useStore((state) => state.viaPercent);
   const toPercent = useStore((state) => state.toPercent);
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Skeleton className="p-5 rounded-xl bg-neutral-600" />
+    )
+  }
 
   async function handleClick() {
     let textEncode;
@@ -31,7 +44,7 @@ export default function DownloadImage({ encode }) {
   }
   return (
     <Button
-      className="px-2 py-1 bg-white text-neutral-800 hover:bg-neutral-200"
+      className="p-2 transition-all bg-white hover:scale-105 group text-neutral-800 hover:bg-neutral-200"
       arial-label="Descargar imagen"
       title="Descargar imagen"
       onClick={() => {
@@ -42,7 +55,7 @@ export default function DownloadImage({ encode }) {
         });
       }}
     >
-      <IconPhotoDown />
+      <IconPhotoDown className="size-8 group-hover:text-pink-600"/>
     </Button>
   );
 }

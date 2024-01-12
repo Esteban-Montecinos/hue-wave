@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import { IconFileTypeCss } from "./icons/file-type-css-svg";
 import { useStore } from "@/hooks/use-store";
 import { toast } from "sonner";
+import { Skeleton } from "./ui/skeleton";
+import { useEffect, useState } from "react";
 
 export default function CopyCSS({gradient}) {
   const bg = useStore((state) => state.bg);
@@ -13,6 +15,17 @@ export default function CopyCSS({gradient}) {
   const frPercent = useStore((state) => state.frPercent);
   const viaPercent = useStore((state) => state.viaPercent);
   const toPercent = useStore((state) => state.toPercent);
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Skeleton className="p-5 rounded-xl bg-neutral-600" />
+    )
+  }
 
   async function handleClick() {
     let copyText
@@ -27,7 +40,7 @@ export default function CopyCSS({gradient}) {
   }
   return (
     <Button
-      className="px-2 py-1 bg-white text-neutral-800 hover:bg-neutral-200"
+      className="p-2 transition-all bg-white hover:scale-105 group text-neutral-800 hover:bg-neutral-200"
       arial-label="Copiar código CSS"
       title="Copiar código CSS"
       onClick={() => {
@@ -38,7 +51,7 @@ export default function CopyCSS({gradient}) {
         });
       }}
     >
-      <IconFileTypeCss />
+      <IconFileTypeCss className="size-8 group-hover:text-blue-600"/>
     </Button>
   );
 }
