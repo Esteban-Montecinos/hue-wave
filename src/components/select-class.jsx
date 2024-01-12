@@ -103,7 +103,6 @@ export default function SelectClass() {
               <SelectItem
                 key={`from-${tw}`}
                 value={hex + `+from-${tw}`}
-                className="hover:bg-neutral-800 selected:bg-neutral-800"
               >
                 {`from-${tw}`}
                 <span
