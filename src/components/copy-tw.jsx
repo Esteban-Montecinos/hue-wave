@@ -50,7 +50,7 @@ export default function CopyTW({gradient}) {
         });
       }}
     >
-      <IconBrandTailwind className="size-9 group-hover:text-cyan-600"/>
+      <IconBrandTailwind className="size-11 group-hover:text-cyan-600"/>
     </Button>
   );
 }

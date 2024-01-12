@@ -51,7 +51,7 @@ export default function CopyCSS({gradient}) {
         });
       }}
     >
-      <IconFileTypeCss className="size-8 group-hover:text-blue-600"/>
+      <IconFileTypeCss className="size-10 group-hover:text-blue-600"/>
     </Button>
   );
 }

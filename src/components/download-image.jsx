@@ -55,7 +55,7 @@ export default function DownloadImage({ encode }) {
         });
       }}
     >
-      <IconPhotoDown className="size-8 group-hover:text-pink-600"/>
+      <IconPhotoDown className="size-10 group-hover:text-pink-600"/>
     </Button>
   );
 }
