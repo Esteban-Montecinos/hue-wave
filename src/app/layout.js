@@ -12,6 +12,21 @@ export const metadata = {
   title: "Hue Wave | Generador de Gradientes para Tailwind CSS",
   description: "Crea, Copia y Comparte Gradientes para Tailwind CSS y CSS",
   metadataBase: new URL("https://huewave.vercel.app/"),
+  openGraph: {
+    title: "Hue Wave | Generador de Gradientes para Tailwind CSS",
+    description: "Crea, Copia y Comparte Gradientes para Tailwind CSS y CSS",
+    url: "https://huewave.vercel.app/",
+    siteName: "Hue Wave",
+    images: [
+      {
+        url: "/huewave.webp",
+        width: 648,
+        height: 648,
+        alt: "Hue Wave",
+        type: "image/webp",
+      }
+    ]
+  }
 };
 
 export default function RootLayout({ children }) {
