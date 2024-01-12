@@ -10,6 +10,7 @@ export default function Card({title,gradientTw, gradientCSS,encode}) {
   return (
     <article className="relative">
         <Link href={`/${encode}`} >
+            <span className='sr-only'>Gradiente generado con HUE WAVE</span>
           <div className={cn("h-64 rounded-xl", gradientTw)}></div>
         </Link>
         <div className="mx-1.5 -mt-6 rounded-xl bg-neutral-900 p-6 text-white">

@@ -22,15 +22,19 @@ export default function RootLayout({ children }) {
       >
         <nav className="flex flex-row justify-center max-w-lg m-auto my-4 text-center">
           <ul className="flex flex-row gap-8">
-            <Link href="/" className="p-2 rounded hover:bg-neutral-700">
-              Gradientes
-            </Link>
-            <Link
-              href="/generador"
-              className="p-2 rounded hover:bg-neutral-700"
-            >
-              Generador
-            </Link>
+            <li className="flex flex-row justify-center">
+              <Link href="/" className="p-2 rounded hover:bg-neutral-700">
+                Gradientes
+              </Link>
+            </li>
+            <li className="flex flex-row justify-center">
+              <Link
+                href="/generador"
+                className="p-2 rounded hover:bg-neutral-700"
+              >
+                Generador
+              </Link>
+            </li>
           </ul>
         </nav>
         <section className="flex flex-col min-h-[60vh] p-2">
