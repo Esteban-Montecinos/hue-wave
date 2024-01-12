@@ -15,6 +15,8 @@ const Slider = React.forwardRef(({ className, ...props }, ref) => (
       <SliderPrimitive.Range className="absolute h-full bg-white" />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb
+      aria-label="Selector de slider"
+      title="Selector de slider"
       className="block w-5 h-5 transition-colors border-2 border-white rounded-full bg-neutral-900 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" />
   </SliderPrimitive.Root>
 ))

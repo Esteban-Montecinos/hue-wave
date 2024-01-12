@@ -1,5 +1,6 @@
 "use client";
-import CustomSelector from "@/components/custom-selector";
+
+import Controls from "@/components/controls";
 import PreviewColor from "@/components/preview-color";
 import PreviewText from "@/components/preview-text";
 import { Toaster } from "sonner";
@@ -60,7 +61,7 @@ export default function GeneratorClientPage({ generator }) {
   }
   return (
     <main className="grid w-full grid-cols-1 gap-8 px-4 mt-10 lg:grid-cols-2">
-      <CustomSelector />
+      <Controls />
       <PreviewColor />
       <PreviewText />
       <Toaster expand={true} />
