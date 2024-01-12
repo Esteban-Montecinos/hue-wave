@@ -1,11 +1,11 @@
 "use client";
 
-import Controls from "@/components/controls";
 import PreviewColor from "@/components/preview-color";
 import PreviewText from "@/components/preview-text";
 import { Toaster } from "sonner";
 import { decode } from "js-base64";
 import { useStore } from "@/hooks/use-store";
+import SelectClass from "@/components/select-class";
 
 export default function GeneratorClientPage({ generator }) {
   const setBg = useStore((state) => state.setBg);
@@ -15,7 +15,7 @@ export default function GeneratorClientPage({ generator }) {
   const setFromPercent = useStore((state) => state.setFromPercent);
   const setViaPercent = useStore((state) => state.setViaPercent);
   const setToPercent = useStore((state) => state.setToPercent);
-
+  
   if (generator) {
     const response = decode(generator);
     const [
@@ -61,7 +61,9 @@ export default function GeneratorClientPage({ generator }) {
   }
   return (
     <main className="grid w-full grid-cols-1 gap-8 px-4 mt-10 lg:grid-cols-2">
-      <Controls />
+      <section className="grid col-span-1 gap-8 lg:col-span-2">
+        <SelectClass />
+      </section>
       <PreviewColor />
       <PreviewText />
       <Toaster expand={true} />
