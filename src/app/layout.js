@@ -11,7 +11,7 @@ const workSans = Work_Sans({
 export const metadata = {
   title: "Hue Wave | Generador de gradientes para Tailwind CSS",
   description: "Copia, crea y comparte gradientes para Tailwind CSS y CSS",
-  metadataBase: new URL("https://buscador-perfil-github.vercel.app/"),
+  metadataBase: new URL("https://huewave.vercel.app/"),
 };
 
 export default function RootLayout({ children }) {
