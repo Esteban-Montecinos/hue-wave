@@ -5,8 +5,6 @@ import { useStore } from "@/hooks/use-store";
 import { toast } from "sonner";
 import { IconShare } from "./icons/share-svg";
 import { encodeURI } from "js-base64";
-import { Skeleton } from "./ui/skeleton";
-import { useEffect, useState } from "react";
 
 export default function ShareGradient({encode}) {
   const bg = useStore((state) => state.bg);
@@ -16,17 +14,6 @@ export default function ShareGradient({encode}) {
   const frPercent = useStore((state) => state.frPercent);
   const viaPercent = useStore((state) => state.viaPercent);
   const toPercent = useStore((state) => state.toPercent);
-
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <Skeleton className="p-5 rounded-xl bg-neutral-600" />
-    )
-  }
 
   async function handleClick() {
     let textEncode;

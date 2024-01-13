@@ -43,13 +43,43 @@ export default function PreviewColor(props) {
   }, [previewRef]);
   if (!mounted) {
     return (
-      <Skeleton className="h-[300px] rounded-xl lg:h-full lg:min-h-[400px] bg-neutral-600"></Skeleton>
+      <>
+        <section className="grid col-span-1 gap-8 lg:col-span-2 -order-1">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4">
+              <Skeleton className="p-5 rounded-xl bg-neutral-600" />
+              <Skeleton className="p-5 rounded-xl bg-neutral-600" />
+              <Skeleton className="p-5 rounded-xl bg-neutral-600" />
+              <Skeleton className="p-5 rounded-xl bg-neutral-600" />
+            </div>
+            <div className="flex flex-col justify-center gap-4">
+              <Skeleton className="w-16 h-4 p-2 rounded-xl bg-neutral-600" />
+              <div className="py-2">
+                <Skeleton className="h-2 rounded-xl bg-neutral-600" />
+              </div>
+            </div>
+            <div className="flex flex-col justify-center gap-4">
+              <Skeleton className="w-16 h-4 p-2 rounded-xl bg-neutral-600" />
+              <div className="py-2">
+                <Skeleton className="h-2 rounded-xl bg-neutral-600" />
+              </div>
+            </div>
+            <div className="flex flex-col justify-center gap-4">
+              <Skeleton className="w-16 h-4 p-2 rounded-xl bg-neutral-600" />
+              <div className="py-2">
+                <Skeleton className="h-2 rounded-xl bg-neutral-600" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <Skeleton className="h-[300px] rounded-xl lg:h-full lg:min-h-[400px] bg-neutral-600"></Skeleton>
+      </>
     );
   }
 
   return (
     <>
-      <section className="grid col-span-1 gap-8 lg:col-span-2">
+      <section className="grid col-span-1 gap-8 lg:col-span-2 -order-1">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div className="grid grid-cols-2 gap-4">
             <CopyTW />

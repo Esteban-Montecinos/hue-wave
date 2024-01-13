@@ -42,10 +42,10 @@ export default function SelectClass() {
 
   const handleChangeBg = (e) => {
     const [bg, tw] = e.split("+");
-
     setBg({ bg, tw });
   };
   const handleChangeFrom = (e) => {
+    
     const [hex, tw] = e.split("+");
     setFrom({ hex, tw });
   };
@@ -64,6 +64,7 @@ export default function SelectClass() {
         onValueChange={(e) => handleChangeBg(e)}
         aria-label="Seleccione Gradiente"
         title="Seleccione Gradiente"
+        className="z-50"
       >
         <SelectTrigger
           arial-label="Seleccione Gradiente"
@@ -72,7 +73,7 @@ export default function SelectClass() {
         >
           <SelectValue placeholder="Seleccione Gradiente" />
         </SelectTrigger>
-        <SelectContent className="z-10">
+        <SelectContent>
           <SelectGroup>
             <SelectLabel>Gradientes</SelectLabel>
             {bgGradients.map(({ value, label }) => (
@@ -96,7 +97,7 @@ export default function SelectClass() {
         >
           <SelectValue placeholder="Seleccione Desde" />
         </SelectTrigger>
-        <SelectContent className="z-10">
+        <SelectContent>
           <SelectGroup>
             <SelectLabel>Desde</SelectLabel>
             {colors.map(({ tw, hex }) => (
@@ -128,7 +129,7 @@ export default function SelectClass() {
         >
           <SelectValue placeholder="Seleccione Vía" />
         </SelectTrigger>
-        <SelectContent className="z-10">
+        <SelectContent>
           <SelectGroup>
             <SelectLabel>Vía</SelectLabel>
             {colors.map(({ tw, hex }) => (
@@ -157,7 +158,7 @@ export default function SelectClass() {
         >
           <SelectValue placeholder="Seleccione Hacia" />
         </SelectTrigger>
-        <SelectContent className="z-10">
+        <SelectContent>
           <SelectGroup>
             <SelectLabel>Hacia</SelectLabel>
             {colors.map(({ tw, hex }) => (

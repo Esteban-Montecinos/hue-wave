@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+
 import { Slider } from "./ui/slider";
 import { useStore } from "@/hooks/use-store";
-import { Skeleton } from "./ui/skeleton";
 
 export default function SliderPercent() {
   const frPercent = useStore((state) => state.frPercent);
@@ -11,36 +10,6 @@ export default function SliderPercent() {
   const setFromPercent = useStore((state) => state.setFromPercent);
   const setViaPercent = useStore((state) => state.setViaPercent);
   const setToPercent = useStore((state) => state.setToPercent);
-
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <>
-        <div className="flex flex-col justify-center gap-4">
-          <Skeleton className="w-16 h-4 p-2 rounded-xl bg-neutral-600" />
-          <div className="py-2">
-            <Skeleton className="h-2 rounded-xl bg-neutral-600" />
-          </div>
-        </div>
-        <div className="flex flex-col justify-center gap-4">
-          <Skeleton className="w-16 h-4 p-2 rounded-xl bg-neutral-600" />
-          <div className="py-2">
-            <Skeleton className="h-2 rounded-xl bg-neutral-600" />
-          </div>
-        </div>
-        <div className="flex flex-col justify-center gap-4">
-          <Skeleton className="w-16 h-4 p-2 rounded-xl bg-neutral-600" />
-          <div className="py-2">
-            <Skeleton className="h-2 rounded-xl bg-neutral-600" />
-          </div>
-        </div>
-      </>
-    );
-  }
 
   const handleChangeFromPercent = (percent) => {
     const css = `${percent}%`;
