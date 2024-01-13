@@ -19,38 +19,38 @@ export default function PreviewColor(props) {
   const viaPercent = useStore((state) => state.viaPercent);
   const toPercent = useStore((state) => state.toPercent);
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
   const previewRef = useRef();
-  const handleClick= useCallback(() => {
+  const handleClick = useCallback(() => {
     if (previewRef.current === null) {
-      return
+      return;
     }
 
     toJpeg(previewRef.current, { cacheBust: true, pixelRatio: 1, quality: 1 })
       .then((dataUrl) => {
         const link = document.createElement("a");
-      link.download = "gradiente.jpeg";
-      link.href = dataUrl;
-      link.click();
-      toast.success('La imagen ha sido descargada.')
+        link.download = "gradiente.jpeg";
+        link.href = dataUrl;
+        link.click();
+        toast.success("La imagen ha sido descargada.");
       })
       .catch(() => {
-        toast.error('Error al descargar la imagen')
-      })
-    }, [previewRef])
+        toast.error("Error al descargar la imagen");
+      });
+  }, [previewRef]);
   if (!mounted) {
     return (
       <Skeleton className="h-[300px] rounded-xl lg:h-full lg:min-h-[400px] bg-neutral-600"></Skeleton>
     );
   }
-  
+
   return (
     <>
-    <section className="grid col-span-1 gap-8 lg:col-span-2">
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <section className="grid col-span-1 gap-8 lg:col-span-2">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div className="grid grid-cols-2 gap-4">
             <CopyTW />
             <CopyCSS />
@@ -60,7 +60,22 @@ export default function PreviewColor(props) {
           <SliderPercent />
         </div>
       </section>
-    <div ref={previewRef} className={"h-[300px] rounded-xl lg:h-full lg:min-h-[400px]"} style={{backgroundImage: `${bg.bg} ${fr.hex} ${frPercent.css}, ${via.hex} ${viaPercent.css}, ${to.hex} ${toPercent.css})`}}></div>
+      <div
+        className={"h-[300px] rounded-xl lg:h-full lg:min-h-[400px]"}
+        style={{
+          backgroundImage: `${bg.bg} ${fr.hex} ${frPercent.css}, ${via.hex} ${viaPercent.css}, ${to.hex} ${toPercent.css})`,
+        }}
+      ></div>
+      <div className="sr-only">
+        <div
+          ref={previewRef}
+          style={{
+            backgroundImage: `${bg.bg} ${fr.hex} ${frPercent.css}, ${via.hex} ${viaPercent.css}, ${to.hex} ${toPercent.css})`,
+            width: "1920px",
+            height: "1080px",
+          }}
+        ></div>
+      </div>
     </>
   );
 }
