@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body
-        className={cn("bg-neutral-900 text-neutral-50", workSans.className)}
+        className={cn("bg-neutral-900 text-neutral-100", workSans.className)}
       >
         <nav className="flex flex-row items-center justify-between max-w-screen-xl px-4 m-auto mt-4 text-center">
           <ul className="flex flex-row gap-2">
@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
           <ul className="flex flex-row">
             <li>
               <a aria-label="Repositorio de GitHub de Hue Wave" title="Repositorio de GitHub de Hue Wave" href="https://github.com/Esteban-Montecinos/hue-wave" target="_blank" rel="noopener noreferrer">
-                <IconBrandGithub className="p-1 rounded size-[2.2rem] origin-bottom bg-neutral-800 hover:bg-neutral-700 hover:animate-[wiggle_1.1s_ease-in-out_infinite] transition-all"/>
+                <IconBrandGithub className="p-1 rounded size-10 origin-bottom bg-neutral-800 hover:bg-neutral-700 hover:animate-[wiggle_1s_ease-in-out_infinite] transition-all hover:text-white"/>
               </a>
             </li>
           </ul>

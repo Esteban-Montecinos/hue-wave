@@ -18,7 +18,7 @@ export default function ActiveLink({ href, name }) {
   return (
     <Link
       href={href}
-      className={cn(isActive ? "bg-neutral-700": "hover:bg-neutral-700", "px-2 py-1 rounded transition-colors")}
+      className={cn(isActive ? "bg-neutral-700 text-white": "hover:bg-neutral-700", "px-3 py-2 rounded transition-colors")}
     >
       {name}
     </Link>
