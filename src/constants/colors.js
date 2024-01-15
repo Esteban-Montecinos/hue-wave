@@ -1,4 +1,4 @@
-export const colors = [
+export const COLORS = [
     {hex:"transparent",tw:"transparent"},
     {hex:"#000",tw:"black"},
     {hex:"#fff",tw:"white"},

@@ -1,4 +1,4 @@
-export const bgGradients = [
+export const BG_GRADIENTS = [
   {
     value: { bg: "linear-gradient(to top,", tw: "bg-gradient-to-t" },
     label: "Hacia Arriba",
