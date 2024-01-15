@@ -3,8 +3,6 @@ import { useStore } from "@/hooks/use-store";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { useEffect, useState } from "react";
-import { Skeleton } from "./ui/skeleton";
 import { IconBulbFilled } from "./icons/bulb-filled-svg";
 import { IconBulbOff } from "./icons/bulb-off-svg";
 
@@ -22,16 +20,7 @@ export default function PreviewText() {
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
-  if (!mounted) {
-    return (
-      <Skeleton className="rounded md:rounded-xl bg-neutral-600 min-h-20"></Skeleton>
-    );
-  }
   return (
     <div
       className={cn(
@@ -45,7 +34,9 @@ export default function PreviewText() {
         <Button
           onClick={toggleTheme}
           className={cn(
-            theme === "dark" && "bg-white text-neutral-800 hover:bg-neutral-200", "p-2 size-fit sm:p-2"
+            theme === "dark" &&
+              "bg-white text-neutral-800 hover:bg-neutral-200",
+            "p-2 size-fit sm:p-2"
           )}
           arial-label="Cambiar Color del tema"
           title="Cambiar Color del tema"

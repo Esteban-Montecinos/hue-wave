@@ -1,9 +1,7 @@
 "use client";
 import { useStore } from "@/hooks/use-store";
-import { useEffect, useState } from "react";
-import { Skeleton } from "./ui/skeleton";
 
-export default function PreviewColor({previewRef}) {
+export default function PreviewColor({ previewRef }) {
   const bg = useStore((state) => state.bg);
   const fr = useStore((state) => state.fr);
   const via = useStore((state) => state.via);
@@ -11,17 +9,6 @@ export default function PreviewColor({previewRef}) {
   const frPercent = useStore((state) => state.frPercent);
   const viaPercent = useStore((state) => state.viaPercent);
   const toPercent = useStore((state) => state.toPercent);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  
-  if (!mounted) {
-    return (
-        <Skeleton className="h-[150px] sm:h-[300px] rounded md:rounded-xl lg:h-full  bg-neutral-600 lg:min-h-[400px]"></Skeleton>
-    );
-  }
 
   return (
     <>

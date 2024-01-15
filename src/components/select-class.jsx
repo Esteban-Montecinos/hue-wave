@@ -11,8 +11,6 @@ import {
   SelectValue,
 } from "./ui/select";
 import { useStore } from "@/hooks/use-store";
-import { useEffect, useState } from "react";
-import { Skeleton } from "./ui/skeleton";
 
 export default function SelectClass() {
   const bg = useStore((state) => state.bg);
@@ -23,22 +21,6 @@ export default function SelectClass() {
   const setFrom = useStore((state) => state.setFrom);
   const setVia = useStore((state) => state.setVia);
   const setTo = useStore((state) => state.setTo);
-
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <div className="grid grid-cols-1 col-span-2 gap-4 lg:grid-cols-2">
-        <Skeleton className="p-5 rounded-xl bg-neutral-600" />
-        <Skeleton className="p-5 rounded-xl bg-neutral-600" />
-        <Skeleton className="p-5 rounded-xl bg-neutral-600" />
-        <Skeleton className="p-5 rounded-xl bg-neutral-600" />
-      </div>
-    );
-  }
 
   const handleChangeBg = (e) => {
     const [bg, tw] = e.split("+");
