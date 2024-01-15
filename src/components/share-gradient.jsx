@@ -38,7 +38,7 @@ export default function ShareGradient({encode}) {
         });
       }}
     >
-      <IconShare className="size-10 group-hover:text-emerald-600"/>
+      <IconShare className="size-6 md:size-10 group-hover:text-emerald-600"/>
     </Button>
   );
 }

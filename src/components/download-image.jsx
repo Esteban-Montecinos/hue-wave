@@ -12,7 +12,7 @@ export default function DownloadImage({ handleClick}) {
       title="Descargar imagen"
       onClick={() => handleClick()}
     >
-      <IconPhotoDown className="size-10 group-hover:text-pink-600" />
+      <IconPhotoDown className="size-6 md:size-10 group-hover:text-pink-600" />
     </Button>
   );
 }

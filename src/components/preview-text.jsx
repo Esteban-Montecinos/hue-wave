@@ -29,42 +29,41 @@ export default function PreviewText() {
 
   if (!mounted) {
     return (
-      <Skeleton className="relative flex items-center p-8 rounded-xl bg-neutral-600 min-h-40"></Skeleton>
+      <Skeleton className="rounded md:rounded-xl bg-neutral-600 min-h-20"></Skeleton>
     );
   }
   return (
     <div
       className={cn(
-        "relative flex items-center p-8  rounded-xl",
+        "relative flex items-center rounded md:rounded-xl",
         theme === "dark"
           ? "bg-neutral-800 text-white"
           : "bg-white text-neutral-800"
       )}
     >
-      <div className="absolute inset-x-0 top-0 flex items-center justify-end p-2">
+      <div className="absolute inset-x-0 top-0 flex items-center justify-end p-1 sm:p-2">
         <Button
           onClick={toggleTheme}
           className={cn(
-            theme === "dark" && "bg-white text-neutral-800 hover:bg-neutral-200"
+            theme === "dark" && "bg-white text-neutral-800 hover:bg-neutral-200", "p-2 size-fit sm:p-2"
           )}
           arial-label="Cambiar Color del tema"
           title="Cambiar Color del tema"
         >
           {theme === "dark" ? (
-            <IconBulbFilled className="size-5" />
+            <IconBulbFilled className="size-4 md:size-5" />
           ) : (
-            <IconBulbOff className="size-5" />
+            <IconBulbOff className="size-4 md:size-5" />
           )}
         </Button>
       </div>
       <p
-        className="min-w-full px-2 py-4 text-2xl font-bold text-center text-transparent rounded bg-clip-text"
+        className="min-w-full px-2 py-4 text-5xl font-extrabold text-center text-transparent rounded text-balance lg:text-6xl bg-clip-text"
         style={{
           backgroundImage: `${bg.bg} ${fr.hex} ${frPercent.css}, ${via.hex} ${viaPercent.css}, ${to.hex} ${toPercent.css})`,
         }}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-        nobis eveniet minus aspernatur mollitia corporis doloribus consequuntur.
+        HUE WAVE
       </p>
     </div>
   );

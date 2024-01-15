@@ -1,16 +1,9 @@
 "use client";
 import { useStore } from "@/hooks/use-store";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
-import CopyTW from "./copy-tw";
-import CopyCSS from "./copy-css";
-import DownloadImage from "./download-image";
-import ShareGradient from "./share-gradient";
-import SliderPercent from "./slider-percent";
-import { toast } from "sonner";
-import { toJpeg } from "html-to-image";
 
-export default function PreviewColor(props) {
+export default function PreviewColor({previewRef}) {
   const bg = useStore((state) => state.bg);
   const fr = useStore((state) => state.fr);
   const via = useStore((state) => state.via);
@@ -23,75 +16,19 @@ export default function PreviewColor(props) {
   useEffect(() => {
     setMounted(true);
   }, []);
-  const previewRef = useRef();
-  const handleClick = useCallback(() => {
-    if (previewRef.current === null) {
-      return;
-    }
-
-    toJpeg(previewRef.current, { cacheBust: true, pixelRatio: 1, quality: 1 })
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = "gradiente.jpeg";
-        link.href = dataUrl;
-        link.click();
-        toast.success("La imagen ha sido descargada.");
-      })
-      .catch(() => {
-        toast.error("Error al descargar la imagen");
-      });
-  }, [previewRef]);
+  
   if (!mounted) {
     return (
-      <>
-        <section className="grid col-span-1 gap-8 lg:col-span-2 -order-1">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <div className="grid grid-cols-2 gap-4">
-              <Skeleton className="p-5 rounded-xl bg-neutral-600" />
-              <Skeleton className="p-5 rounded-xl bg-neutral-600" />
-              <Skeleton className="p-5 rounded-xl bg-neutral-600" />
-              <Skeleton className="p-5 rounded-xl bg-neutral-600" />
-            </div>
-            <div className="flex flex-col justify-center gap-4">
-              <Skeleton className="w-16 h-4 p-2 rounded-xl bg-neutral-600" />
-              <div className="py-2">
-                <Skeleton className="h-2 rounded-xl bg-neutral-600" />
-              </div>
-            </div>
-            <div className="flex flex-col justify-center gap-4">
-              <Skeleton className="w-16 h-4 p-2 rounded-xl bg-neutral-600" />
-              <div className="py-2">
-                <Skeleton className="h-2 rounded-xl bg-neutral-600" />
-              </div>
-            </div>
-            <div className="flex flex-col justify-center gap-4">
-              <Skeleton className="w-16 h-4 p-2 rounded-xl bg-neutral-600" />
-              <div className="py-2">
-                <Skeleton className="h-2 rounded-xl bg-neutral-600" />
-              </div>
-            </div>
-          </div>
-        </section>
-        <Skeleton className="h-[300px] rounded-xl lg:h-full lg:min-h-[400px] bg-neutral-600"></Skeleton>
-      </>
+        <Skeleton className="h-[150px] sm:h-[300px] rounded md:rounded-xl lg:h-full  bg-neutral-600 lg:min-h-[400px]"></Skeleton>
     );
   }
 
   return (
     <>
-      <section className="grid col-span-1 gap-8 lg:col-span-2 -order-1">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <div className="grid grid-cols-2 gap-4">
-            <CopyTW />
-            <CopyCSS />
-            <DownloadImage handleClick={handleClick} />
-            <ShareGradient />
-          </div>
-          <SliderPercent />
-        </div>
-      </section>
       <div
-        className={"h-[300px] rounded-xl lg:h-full lg:min-h-[400px]"}
+        className={
+          "h-[150px] sm:h-[300px] rounded md:rounded-xl lg:h-full lg:min-h-[400px]"
+        }
         style={{
           backgroundImage: `${bg.bg} ${fr.hex} ${frPercent.css}, ${via.hex} ${viaPercent.css}, ${to.hex} ${toPercent.css})`,
         }}

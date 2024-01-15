@@ -2,6 +2,8 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { IconBrandGithub } from "@/components/icons/brand-github-svg";
+import ActiveLink from "@/components/active-link";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -35,20 +37,20 @@ export default function RootLayout({ children }) {
       <body
         className={cn("bg-neutral-900 text-neutral-50", workSans.className)}
       >
-        <nav className="flex flex-row justify-center max-w-lg m-auto my-4 text-center">
-          <ul className="flex flex-row gap-8">
+        <nav className="flex flex-row items-center justify-between max-w-screen-xl px-4 m-auto mt-4 text-center">
+          <ul className="flex flex-row gap-2">
             <li className="flex flex-row justify-center">
-              <Link href="/" className="p-2 rounded hover:bg-neutral-700">
-                Gradientes
-              </Link>
+              <ActiveLink href="/" name="Gradientes"/>
             </li>
             <li className="flex flex-row justify-center">
-              <Link
-                href="/generador"
-                className="p-2 rounded hover:bg-neutral-700"
-              >
-                Generador
-              </Link>
+            <ActiveLink href="/generador" name="Generador"/>
+            </li>
+          </ul>
+          <ul className="flex flex-row">
+            <li>
+              <a aria-label="Repositorio de GitHub de Hue Wave" href="https://github.com/Esteban-Montecinos/hue-wave" target="_blank" rel="noopener noreferrer">
+                <IconBrandGithub className="px-2 py-1 transition-colors rounded size-9 hover:bg-neutral-700"/>
+              </a>
             </li>
           </ul>
         </nav>
@@ -63,7 +65,7 @@ export default function RootLayout({ children }) {
           </header>
           {children}
         </section>
-        <footer className="mt-10 mb-4">
+        <footer className="my-4">
           <p className="self-center text-sm text-center text-balance">
             Desarrollado con ❤ por{" "}
             <a

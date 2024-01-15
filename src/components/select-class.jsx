@@ -31,7 +31,7 @@ export default function SelectClass() {
 
   if (!mounted) {
     return (
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <div className="grid grid-cols-1 col-span-2 gap-4 lg:grid-cols-2">
         <Skeleton className="p-5 rounded-xl bg-neutral-600" />
         <Skeleton className="p-5 rounded-xl bg-neutral-600" />
         <Skeleton className="p-5 rounded-xl bg-neutral-600" />
@@ -45,7 +45,6 @@ export default function SelectClass() {
     setBg({ bg, tw });
   };
   const handleChangeFrom = (e) => {
-    
     const [hex, tw] = e.split("+");
     setFrom({ hex, tw });
   };
@@ -58,7 +57,7 @@ export default function SelectClass() {
     setTo({ hex, tw });
   };
   return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+    <div className="grid grid-cols-1 col-span-2 gap-4 lg:grid-cols-2">
       <Select
         defaultValue={bg.bg + "+" + bg.tw}
         onValueChange={(e) => handleChangeBg(e)}
@@ -101,10 +100,7 @@ export default function SelectClass() {
           <SelectGroup>
             <SelectLabel>Desde</SelectLabel>
             {colors.map(({ tw, hex }) => (
-              <SelectItem
-                key={`from-${tw}`}
-                value={hex + `+from-${tw}`}
-              >
+              <SelectItem key={`from-${tw}`} value={hex + `+from-${tw}`}>
                 {`from-${tw}`}
                 <span
                   className="px-2 ml-2 border size-5"
