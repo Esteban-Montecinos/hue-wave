@@ -1,7 +1,9 @@
 "use client";
+
 import { useStore } from "@/hooks/use-store";
 
 export default function PreviewColor({ previewRef }) {
+  
   const bg = useStore((state) => state.bg);
   const fr = useStore((state) => state.fr);
   const via = useStore((state) => state.via);

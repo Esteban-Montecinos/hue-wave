@@ -1,6 +1,8 @@
 "use client";
-import { bgGradients } from "@/constants/bg-gradients";
-import { colors } from "@/constants/colors";
+
+import { BG_GRADIENTS } from "@/constants/bg-gradients";
+import { COLORS } from "@/constants/colors";
+import { useStore } from "@/hooks/use-store";
 import {
   Select,
   SelectContent,
@@ -10,9 +12,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { useStore } from "@/hooks/use-store";
 
 export default function SelectClass() {
+
   const bg = useStore((state) => state.bg);
   const fr = useStore((state) => state.fr);
   const via = useStore((state) => state.via);
@@ -57,7 +59,7 @@ export default function SelectClass() {
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Gradientes</SelectLabel>
-            {bgGradients.map(({ value, label }) => (
+            {BG_GRADIENTS.map(({ value, label }) => (
               <SelectItem key={value.tw} value={value.bg + "+" + value.tw}>
                 {label}
               </SelectItem>
@@ -81,7 +83,7 @@ export default function SelectClass() {
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Desde</SelectLabel>
-            {colors.map(({ tw, hex }) => (
+            {COLORS.map(({ tw, hex }) => (
               <SelectItem key={`from-${tw}`} value={hex + `+from-${tw}`}>
                 {`from-${tw}`}
                 <span
@@ -110,7 +112,7 @@ export default function SelectClass() {
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Vía</SelectLabel>
-            {colors.map(({ tw, hex }) => (
+            {COLORS.map(({ tw, hex }) => (
               <SelectItem key={`via-${tw}`} value={hex + `+via-${tw}`}>
                 {`via-${tw}`}
                 <span
@@ -139,7 +141,7 @@ export default function SelectClass() {
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Hacia</SelectLabel>
-            {colors.map(({ tw, hex }) => (
+            {COLORS.map(({ tw, hex }) => (
               <SelectItem key={`to-${tw}`} value={hex + `+to-${tw}`}>
                 {`to-${tw}`}
                 <span

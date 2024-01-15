@@ -4,6 +4,7 @@ import { Slider } from "./ui/slider";
 import { useStore } from "@/hooks/use-store";
 
 export default function SliderPercent() {
+  
   const frPercent = useStore((state) => state.frPercent);
   const viaPercent = useStore((state) => state.viaPercent);
   const toPercent = useStore((state) => state.toPercent);

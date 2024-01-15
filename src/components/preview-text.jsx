@@ -1,4 +1,5 @@
 "use client";
+
 import { useStore } from "@/hooks/use-store";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
@@ -7,6 +8,7 @@ import { IconBulbFilled } from "./icons/bulb-filled-svg";
 import { IconBulbOff } from "./icons/bulb-off-svg";
 
 export default function PreviewText() {
+
   const bg = useStore((state) => state.bg);
   const fr = useStore((state) => state.fr);
   const via = useStore((state) => state.via);
