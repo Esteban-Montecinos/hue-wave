@@ -3,15 +3,34 @@
 import PreviewColor from "@/components/preview-color";
 import PreviewText from "@/components/preview-text";
 import { Toaster, toast } from "sonner";
-import { decode } from "js-base64";
 import { useStore } from "@/hooks/use-store";
 import SelectClass from "@/components/select-class";
 import SliderPercent from "@/components/slider-percent";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { toJpeg } from "html-to-image";
 import ButtonsGroup from "@/components/buttons-group";
+import Loading from "./loading";
 
-export default function GeneratorClientPage({ generator }) {
+export default function GeneratorClientPage({
+  bg,
+  bgTw,
+  fr,
+  frTw,
+  via,
+  viaTw,
+  to,
+  toTw,
+  frPercent,
+  frPercentTw,
+  viaPercent,
+  viaPercentTw,
+  toPercent,
+  toPercentTw,
+}) {
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
   const setBg = useStore((state) => state.setBg);
   const setFrom = useStore((state) => state.setFrom);
   const setVia = useStore((state) => state.setVia);
@@ -19,49 +38,31 @@ export default function GeneratorClientPage({ generator }) {
   const setFromPercent = useStore((state) => state.setFromPercent);
   const setViaPercent = useStore((state) => state.setViaPercent);
   const setToPercent = useStore((state) => state.setToPercent);
+  const [mounted, setMounted] = useState(false);
 
-  if (generator) {
-    const response = decode(generator);
-    const [
-      bg,
-      bgTw,
-      fr,
-      frTw,
-      via,
-      viaTw,
-      to,
-      toTw,
-      frPercent,
-      frPercentTw,
-      viaPercent,
-      viaPercentTw,
-      toPercent,
-      toPercentTw,
-    ] = response.split("+");
-    if (
-      bg !== undefined &&
-      fr !== undefined &&
-      via !== undefined &&
-      to !== undefined &&
-      frPercent !== undefined &&
-      viaPercent !== undefined &&
-      toPercent !== undefined &&
-      bgTw !== undefined &&
-      frTw !== undefined &&
-      viaTw !== undefined &&
-      toTw !== undefined &&
-      frPercentTw !== undefined &&
-      viaPercentTw !== undefined &&
-      toPercentTw !== undefined
-    ) {
-      setBg({ bg: bg, tw: bgTw });
-      setFrom({ hex: fr, tw: frTw });
-      setVia({ hex: via, tw: viaTw });
-      setTo({ hex: to, tw: toTw });
-      setFromPercent({ css: frPercent, tw: frPercentTw });
-      setViaPercent({ css: viaPercent, tw: viaPercentTw });
-      setToPercent({ css: toPercent, tw: toPercentTw });
-    }
+  if (
+    bg !== undefined &&
+    fr !== undefined &&
+    via !== undefined &&
+    to !== undefined &&
+    frPercent !== undefined &&
+    viaPercent !== undefined &&
+    toPercent !== undefined &&
+    bgTw !== undefined &&
+    frTw !== undefined &&
+    viaTw !== undefined &&
+    toTw !== undefined &&
+    frPercentTw !== undefined &&
+    viaPercentTw !== undefined &&
+    toPercentTw !== undefined
+  ) {
+    setBg({ bg: bg, tw: bgTw });
+    setFrom({ hex: fr, tw: frTw });
+    setVia({ hex: via, tw: viaTw });
+    setTo({ hex: to, tw: toTw });
+    setFromPercent({ css: frPercent, tw: frPercentTw });
+    setViaPercent({ css: viaPercent, tw: viaPercentTw });
+    setToPercent({ css: toPercent, tw: toPercentTw });
   }
 
   const previewRef = useRef();
@@ -82,7 +83,7 @@ export default function GeneratorClientPage({ generator }) {
         toast.error("Error al descargar la imagen");
       });
   }, [previewRef]);
-
+  if (!mounted) return <Loading />;
   return (
     <main className="grid w-full max-w-screen-xl grid-cols-3 gap-4 px-4 mx-auto mt-4 md:mt-8 md:gap-8">
       <div className="grid w-full grid-cols-1 col-span-3 gap-4 lg:grid-cols-2 md:gap-8">
@@ -90,7 +91,7 @@ export default function GeneratorClientPage({ generator }) {
         <PreviewText />
       </div>
       <SliderPercent />
-      <ButtonsGroup handleClick={handleClick}/>
+      <ButtonsGroup handleClick={handleClick} />
       <SelectClass />
       <Toaster expand={true} />
     </main>
