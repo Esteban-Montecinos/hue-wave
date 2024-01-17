@@ -18,6 +18,7 @@
     "html-to-image": "^1.11.11",
     "js-base64": "^3.7.5",
     "lucide-react": "^0.309.0",
+    "million": "^2.6.4",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
