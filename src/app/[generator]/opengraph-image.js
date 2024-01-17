@@ -5,8 +5,8 @@ export const runtime = "edge";
 
 export const alt = "Hue Wave gradient image";
 export const size = {
-  width: 1366,
-  height: 768,
+  width: 640,
+  height: 640,
 };
 
 export const contentType = "image/png";
@@ -32,8 +32,8 @@ export default async function Image({ params: { generator } }) {
   let gradient
   let text
   if (bg.split("-")[0] === "conic") {
-    gradient = "linear-gradient(to left bottom, #f9a8d4 9%, #d8b4fe 33%, #818cf8 68%)";
-    text = "Oops Algo Malio Sal";
+    gradient = "radial-gradient(at right top, #262626 24%, #171717 60%, #0a0a0a 100%)";
+    text = "Ups Algo Malio Sal";
   }else{
     gradient = `${bg} ${fr} ${frPercent}, ${via} ${viaPercent}, ${to} ${toPercent})`;
   }
@@ -49,7 +49,7 @@ export default async function Image({ params: { generator } }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: "5em",
+          fontSize: "4rem",
           fontWeight: "bold",
         }}
       >
