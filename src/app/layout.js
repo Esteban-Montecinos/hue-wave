@@ -25,9 +25,9 @@ export const metadata = {
         height: 648,
         alt: "Hue Wave",
         type: "image/webp",
-      }
-    ]
-  }
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -36,24 +36,34 @@ export default function RootLayout({ children }) {
       <body
         className={cn("bg-neutral-900 text-neutral-100", workSans.className)}
       >
-        <nav className="flex flex-row items-center justify-between max-w-screen-xl px-4 m-auto mt-4 text-center">
-          <ul className="flex flex-row gap-2">
+        <nav className="flex flex-row items-center justify-between max-w-screen-xl gap-2 px-4 m-auto mt-4 text-center">
+          <ul className="flex flex-row items-center gap-2">
             <li className="flex flex-row justify-center">
-              <ActiveLink href="/" name="Gradientes"/>
+              <ActiveLink href="/" name="Gradientes" />
             </li>
             <li className="flex flex-row justify-center">
-            <ActiveLink href="/generador" name="Generador"/>
+              <ActiveLink href="/generador" name="Generador" />
             </li>
           </ul>
-          <ul className="flex flex-row">
-            <li>
-              <a aria-label="Repositorio de GitHub de Hue Wave" title="Repositorio de GitHub de Hue Wave" href="https://github.com/Esteban-Montecinos/hue-wave" target="_blank" rel="noopener noreferrer">
-                <IconBrandGithub className="p-2 hover:p-1 rounded size-10 origin-bottom bg-neutral-800 hover:bg-neutral-700 hover:animate-[wiggle_1s_ease-in-out_infinite] transition-all hover:text-white"/>
+          <ul className="flex flex-row items-center gap-2">
+            <li className="flex flex-row justify-center">
+              <ActiveLink href="/favorites" name="Favoritos" icon />
+            </li>
+            <li className="flex flex-row justify-center">
+              <a
+                aria-label="Repositorio de GitHub de Hue Wave"
+                title="Repositorio de GitHub de Hue Wave"
+                href="https://github.com/Esteban-Montecinos/hue-wave"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-3 py-2 rounded group text-neutral-100 hover:bg-neutral-700 hover:text-white bg-neutral-800"
+              >
+                <IconBrandGithub className="size-6 origin-bottom   transition-all group-hover:animate-[wiggle_1s_ease-in-out_infinite]" />
               </a>
             </li>
           </ul>
         </nav>
-        <section className="flex flex-col min-h-[60vh] p-2">
+        <section className="flex flex-col min-h-[calc(100vh-120px)] p-2">
           <header className="flex flex-col w-full pb-4 text-center md:pb-8 lg:pb-10">
             <h1 className="text-4xl font-extrabold tracking-tighter text-transparent uppercase sm:text-5xl lg:text-7xl bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 bg-clip-text">
               Hue Wave

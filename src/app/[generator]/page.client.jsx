@@ -27,10 +27,6 @@ export default function GeneratorClientPage({
   toPercent,
   toPercentTw,
 }) {
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  
   const setBg = useStore((state) => state.setBg);
   const setFrom = useStore((state) => state.setFrom);
   const setVia = useStore((state) => state.setVia);
@@ -39,6 +35,10 @@ export default function GeneratorClientPage({
   const setViaPercent = useStore((state) => state.setViaPercent);
   const setToPercent = useStore((state) => state.setToPercent);
   const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (
     bg !== undefined &&

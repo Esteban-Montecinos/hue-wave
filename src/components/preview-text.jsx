@@ -6,9 +6,10 @@ import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { IconBulbFilled } from "./icons/bulb-filled-svg";
 import { IconBulbOff } from "./icons/bulb-off-svg";
+import { encodeURI } from "js-base64";
+import FavoriteButton from "./favorite-button";
 
 export default function PreviewText() {
-
   const bg = useStore((state) => state.bg);
   const fr = useStore((state) => state.fr);
   const via = useStore((state) => state.via);
@@ -16,6 +17,7 @@ export default function PreviewText() {
   const frPercent = useStore((state) => state.frPercent);
   const viaPercent = useStore((state) => state.viaPercent);
   const toPercent = useStore((state) => state.toPercent);
+
   const theme = useTheme((state) => state.theme);
   const setTheme = useTheme((state) => state.setTheme);
 
@@ -23,6 +25,13 @@ export default function PreviewText() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const newGradient = {
+    gradientTw: `${bg.tw} ${fr.tw} ${frPercent.tw} ${via.tw} ${viaPercent.tw} ${to.tw} ${toPercent.tw}`,
+    gradientCSS: `${bg.bg} ${fr.hex} ${frPercent.css}, ${via.hex} ${viaPercent.css}, ${to.hex} ${toPercent.css})`,
+    encode: encodeURI(
+      `${bg.bg}+${bg.tw}+${fr.hex}+${fr.tw}+${via.hex}+${via.tw}+${to.hex}+${to.tw}+${frPercent.css}+${frPercent.tw}+${viaPercent.css}+${viaPercent.tw}+${toPercent.css}+${toPercent.tw}`
+    ),
+  };
   return (
     <div
       className={cn(
@@ -32,7 +41,8 @@ export default function PreviewText() {
           : "bg-white text-neutral-800"
       )}
     >
-      <div className="absolute inset-x-0 top-0 flex items-center justify-end p-1 sm:p-2">
+      <div className="absolute inset-x-0 top-0 flex items-center justify-end gap-1 p-1 sm:p-2">
+        <FavoriteButton gradient={newGradient} />
         <Button
           onClick={toggleTheme}
           className={cn(
